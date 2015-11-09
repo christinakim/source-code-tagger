@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    title Source Code Summary and Tag Highlighter
+
+  body
+    h1 Source Code Summary and Tag Highlighter
+    #container
+      form#urlForm(action='/summary', method='post')
+        .form-uname
+          lable#urlLabel(for='url') Enter a URL
+          input#url(type='text')
+        .form-submit
+          submit#submit(value='submit', type='button') Submit
+      .summary-view
+        p#summary
+      .source-code-view
+        pre#source-code.
