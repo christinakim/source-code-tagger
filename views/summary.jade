@@ -1,11 +1,36 @@
 doctype html
 html(lang="en")
-  head
-    title Source Code Summary and Tag Highlighter
-  body
-    h1 Source Code Summary and Tag Highlighter
-    #container
-      .tagSummary
-        p!= tags
-      .sourceCodeView
-        pre!= html
+	head
+		title Source Code Summary and Tag Highlighter
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
+
+	body
+		.container
+			.teal-text
+				h5 Summary of Tags found in the Source Code
+				.tag
+					p
+						ul
+						each val, index in tags
+							li(onclick="highlight(this, 'yellow')")(id= index)= index + ' : ' + val
+							script.
+								function highlight(elmnt,clr) {
+								elmnt.style.color = clr;
+								var els = document.getElementsByClassName('html-view');
+								var searchValue = elmnt.id;
+								searchValue = ''+ searchValue +'';
+								if(els[0].innerHTML.indexOf(searchValue) > -1){
+								console.log("found match at " + els[0].innerHTML.indexOf(searchValue))
+								}
+								}
+			.grey-text
+				h5 Source Code View
+				.html-view
+					p!= html
+
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src=" http://johannburkard.de/resources/Johann/jquery.highlight-5.closure.js"</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+          

@@ -42,24 +42,22 @@ app.post('/summary', function (req, res) {
             
             //traverse DOM to get name of each node/element
             for (i = 0; i < data.length; i++) { 
-    			tag = data.get(i).name;
+    			name = data.get(i).name;
 
     			//if it's the first time we're seeing the tag add it to tags and set the count to 1
-    			if(tags[tag] === undefined){
-    				tags[tag] = 1;
+    			if(tags[name] === undefined){
+    				tags[name] = 1;
     			} else {
     				//otherwise add 1 
-    				tags[tag] = tags[tag] + 1;
+    				tags[name] = tags[name] + 1;
     			}
 			}
 
         }
-        var tagJSON = JSON.stringify(tags),
-            htmlJSON = JSON.stringify(html);
-        
 
+        
         try {   
-        res.render('summary', {tags: tagJSON, html: '<xmp>' + html + '</xmp>'});
+        res.render('summary', {tags: tags, html: '<xmp>' + html + '</xmp>'});
         }
         catch (e) {
             console.log(e);

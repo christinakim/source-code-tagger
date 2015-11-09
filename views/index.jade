@@ -2,14 +2,20 @@ doctype html
 html(lang="en")
   head
     title Source Code Summary and Tag Highlighter
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
+
+          
 
   body
-    h1 Source Code Summary and Tag Highlighter
-    #container
+    .container
+      h3 Source Code Summary and Tag Highlighter
       form#urlForm(action='/summary', method='post', enctype='application/x-www-form-urlencoded')
         .form-uname
           lable#urlLabel(for='inputUrl') Enter a URL
           input#inputUrl(type='text' name="inputUrl")
         .form-submit
-          submit#submit(value='submit', type='button') Submit
+          submit.btn#submit(value='submit', type='submit') Press Enter
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
 
