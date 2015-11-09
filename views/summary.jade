@@ -13,10 +13,10 @@ html(lang="en")
 					p
 						ul
 						each val, index in tags
-							li(onclick="highlight(this, 'yellow')")(id= index)= index + ' : ' + val
+							li(onclick="highlight(this)")(id= index)= index + ' : ' + val
 							script.
-								function highlight(elmnt,clr) {
-								elmnt.style.color = clr;
+								function highlight(elmnt) {
+								elmnt.style.color = (elmnt.style.color !== 'yellow')? 'yellow': '';
 								var els = document.getElementsByClassName('html-view');
 								var searchValue = elmnt.id;
 								searchValue = ''+ searchValue +'';

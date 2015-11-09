@@ -12,7 +12,7 @@ html(lang="en")
       form#urlForm(action='/summary', method='post', enctype='application/x-www-form-urlencoded')
         .form-uname
           lable#urlLabel(for='inputUrl') Enter a URL
-          input#inputUrl(type='text' name="inputUrl")
+          input#inputUrl(type='text' name="inputUrl" value= "http://" placeholder="http://www.example.com")
         .form-submit
               input.btn#submit(value='Submit', type='submit')
 
