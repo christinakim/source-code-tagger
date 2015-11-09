@@ -8,6 +8,7 @@ html(lang="en")
 		.container
 			.teal-text
 				h5 Summary of Tags found in the Source Code
+				p click on a tag to see where it can be found in the source code view via the console
 				.tag
 					p
 						ul
@@ -20,7 +21,7 @@ html(lang="en")
 								var searchValue = elmnt.id;
 								searchValue = ''+ searchValue +'';
 								if(els[0].innerHTML.indexOf(searchValue) > -1){
-								console.log("found match at " + els[0].innerHTML.indexOf(searchValue))
+								console.log(els[0].innerHTML.indexOf(searchValue));
 								}
 								}
 			.grey-text
