@@ -1,5 +1,5 @@
 {
-  "name": "slack-exercise",
+  "name": "source-code-tagger",
   "version": "0.0.0",
   "description": "Source code view and summary",
   "main": "app.js",
